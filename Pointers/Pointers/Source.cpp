@@ -1,27 +1,28 @@
 #include <iostream>
-#include <String>
+#include <string>
 using namespace std;
 
 
+struct Container
+{
+	string Name;
+
+	int X;
+	int Y;
+	int Z;
+};
+
 int main()
 {
-	int numbers[] = { 0,1,2,3,4,5,6,7,8,9,10 };
+	Container container = { "Sam", 5,6,7 };
 
-	int* NumPtr = numbers;
+	Container* PtrToCont = &container;
 
-	cout << *NumPtr << endl;
+	cout << (*PtrToCont).Name << endl;
 
-	NumPtr++;
-
-	cout << *NumPtr << endl;
-
-	NumPtr++;
-
-	cout << *NumPtr << endl;
-
-	NumPtr += 3;
-
-	cout << *NumPtr << endl;
+	cout << PtrToCont->Name << endl;
+	cout << PtrToCont-> X << endl;
+	cout << PtrToCont-> Y << endl;
 
 	system("pause");
 }

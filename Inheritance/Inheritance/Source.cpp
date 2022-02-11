@@ -15,15 +15,26 @@ public:
 	void Report();
 };
 
+class Dog : public Animal
+{
+public:
+	Dog();
+	Dog(string name, int age, int num_limbs);
+
+	void Speak();
+};
+
+class Corgi : public Dog
+{
+	
+};
+
 int main()
 {
-	Animal animal;
+	Corgi corgi;
 
-	animal.Report();
-
-	Animal animal_2("Cheetah", 7, 5);
-
-	animal_2.Report();
+	corgi.Speak();
+	corgi.Report();
 
 	system("pause");
 }
@@ -46,7 +57,23 @@ Animal::Animal(string name, int age, int num_limbs)
 
 void Animal::Report()
 {
+	cout << endl;
 	cout << "Name: " << Name << endl;
 	cout << "Age: " << Age << endl;
 	cout << "Number of limbs: " << NumberOfLimbs << endl;
+}
+
+Dog::Dog()
+{
+	cout << "A DOG is born"  << endl;
+}
+
+Dog::Dog(string name, int age, int num_limbs) : Animal(name, age, num_limbs)
+{
+	
+}
+
+void Dog::Speak()
+{
+	cout << "Woof!\n";
 }
